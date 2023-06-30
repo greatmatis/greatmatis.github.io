@@ -19,8 +19,13 @@
 
             function updateTime() {
                 var today = new Date();
-                var h = today.getHours();
-                var m = today.getMinutes();
+
+                var utc = today.getTime()
+                var nd = new Date(utc + (3600000*7));
+
+                var h = nd.getHours();
+                var m = nd.getMinutes();
+
                 setTimeout(updateTime, 500);
                 h = addZero(h);
                 m = addZero(m);
