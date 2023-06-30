@@ -19,7 +19,7 @@ body {
     float: left;
     color: white;
     font-size: 4rem;
-    font-family: 'arial', sans-serif;
+    font-family: Arial, sans-serif;
 }
 
 #left {
@@ -41,7 +41,7 @@ body {
     position: absolute;
     display: block;
     color: white;
-    font-family: 'arial', sans-serif;
+    font-family: Arial, sans-serif;
     font-size: 2rem;
 }
 
