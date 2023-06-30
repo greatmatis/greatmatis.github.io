@@ -26,7 +26,7 @@ body {
     float: left;
     color: white;
     font-size: 4rem;
-    font-family: Arial, sans-serif;
+    font-family: 'CoFo', sans-serif;
 }
 
 #left {
@@ -48,7 +48,7 @@ body {
     position: absolute;
     display: block;
     color: white;
-    font-family: Arial, sans-serif;
+    font-family: 'CoFo', sans-serif;
     font-size: 2rem;
 }
 
