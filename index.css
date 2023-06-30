@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    padding: 64px;
+    padding: 2rem;
     overflow: hidden;
 }
 
@@ -18,40 +18,40 @@ body {
     display: flex;
     float: left;
     color: white;
-    font-size: 48px;
-    font-family: 'LatoWebBold', sans-serif;
+    font-size: 4rem;
+    font-family: 'arial', sans-serif;
 }
 
 #left {
     position: absolute;
-    margin-top: 360px;
+    margin-top: 18%;
 
 }
 
 #logo {
     display: inline-block;
     background: url(logo.svg) no-repeat;
-    width: 626px;
-    height: 86px;
-    margin-bottom: 32px;
+    background-size: contain;
+    width: 30rem;
+    height: 4rem;
+    margin-bottom: 2rem;
 }
 
 #msg {
     position: absolute;
     display: block;
     color: white;
-    font-family: 'LatoWebBlack', sans-serif;
-    font-size: 36px;
+    font-family: 'arial', sans-serif;
+    font-size: 2rem;
 }
 
 #dr {
     float: right;
-    width: 673px;
-    height: 952px;
-    margin-right: 32px;
+    width: 29rem;
+    height: 41rem;
     border-radius: 32px;
     background: url(dr.jpg) no-repeat;
-    background-size: cover;
+    background-size: contain;
     opacity: 0.9;
 }
 
