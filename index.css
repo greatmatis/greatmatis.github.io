@@ -1,0 +1,64 @@
+body {
+    margin: 0;
+    padding: 64px;
+    overflow: hidden;
+}
+
+#bg {
+    z-index: -2;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+    background-color: black;
+}
+
+#info {
+    display: flex;
+    float: left;
+    color: white;
+    font-size: 48px;
+    font-family: 'LatoWebBold', sans-serif;
+}
+
+#left {
+    position: absolute;
+    margin-top: 360px;
+
+}
+
+#logo {
+    display: inline-block;
+    background: url(logo.svg) no-repeat;
+    width: 626px;
+    height: 86px;
+    margin-bottom: 32px;
+}
+
+#msg {
+    position: absolute;
+    display: block;
+    color: white;
+    font-family: 'LatoWebBlack', sans-serif;
+    font-size: 36px;
+}
+
+#dr {
+    float: right;
+    width: 673px;
+    height: 952px;
+    margin-right: 32px;
+    border-radius: 32px;
+    background: url(dr.jpg) no-repeat;
+    background-size: cover;
+    opacity: 0.9;
+}
+
+.temperature {
+    display: flex;
+}
+
+.temperature span {
+    margin: 0 56px 0 10px;
+}
