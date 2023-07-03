@@ -17,6 +17,14 @@
                 return i;
             }
 
+            function getTemp() {
+                fetch('http://api.openweathermap.org/data/2.5/weather?q=Tomsk,ru&units=metric&APPID=1cfc8b91998f40e22a176808aaf39c15')
+                .then(response => response.json())
+                .then(data => {
+                    temp = data.main.temp;
+                })
+            }
+
             function updateTime() {
                 var today = new Date();
 
@@ -51,16 +59,26 @@
                     'декабря'
                 ];
 
-                setTimeout(updateTime, 500);
+                setTimeout(updateTime, 1000);
                 h = addZero(h);
                 m = addZero(m);
-                document.getElementById('time').innerHTML = h + ":" + m;
+
+                document.getElementById('time').innerHTML = h + ":" + m + " • " + Math.round(temp) + "°C";
                 document.getElementById('date').innerHTML = nd.getDate() + " " + months[nd.getMonth()] + ", " + days[nd.getDay()];
+
+            }
+
+            function updateWeather() {
+                getTemp();
+                setTimeout(updateWeather, 10000);
             }
 
             window.addEventListener("load", myInit, true); function myInit() {
+                temp = 0;
                 updateTime();
+                updateWeather();
             };
+
         </script>
 
         <div id = "bg">
@@ -76,7 +94,7 @@
 
         <div id = "left">
             <div id = "logo-text">red_mad_<span id = "logo-text-pixel">robot</span></div>
-            <div id = "msg">Солнце в Томске светит 2048 часов в году — почти половину возможного времени</div>
+            <div id = "msg">Солнце в&nbsp;Томске светит 2048&nbsp;часов в&nbsp;году&nbsp;— почти половину возможного времени</div>
         </div>
 
         <div id = "dr"></div>
