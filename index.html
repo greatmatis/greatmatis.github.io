@@ -55,7 +55,7 @@
                 h = addZero(h);
                 m = addZero(m);
                 document.getElementById('time').innerHTML = h + ":" + m;
-                document.getElementById('date').innerHTML = today.getDate() + " " + months[today.getMonth()] + ", " + days[today.getDay()];
+                document.getElementById('date').innerHTML = nd.getDate() + " " + months[nd.getMonth()] + ", " + days[nd.getDay()];
             }
 
             window.addEventListener("load", myInit, true); function myInit() {
