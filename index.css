@@ -31,18 +31,17 @@ body {
 }
 
 #info {
+    display: inline-block;
     color: white;
     font-family: 'CoFo', sans-serif;
     text-shadow: 0px 0px 16px rgba(0, 0, 0, 0.3);
 }
 
 #time {
-    display: block;
     font-size: 4rem;
 }
 
 #date {
-    display: block;
     font-size: 2rem;
 }
 
