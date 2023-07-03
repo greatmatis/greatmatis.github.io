@@ -26,10 +26,36 @@
                 var h = nd.getHours();
                 var m = nd.getMinutes();
 
+                var days = [
+                    'воскресенье',
+                    'понедельник',
+                    'вторник',
+                    'среда',
+                    'четверг',
+                    'пятница',
+                    'суббота'
+                ];
+
+                var months = [
+                    'января',
+                    'февраля',
+                    'марта',
+                    'апреля',
+                    'мая',
+                    'июня',
+                    'июля',
+                    'августа',
+                    'сентября',
+                    'октября',
+                    'ноября',
+                    'декабря'
+                ];
+
                 setTimeout(updateTime, 500);
                 h = addZero(h);
                 m = addZero(m);
                 document.getElementById('time').innerHTML = h + ":" + m;
+                document.getElementById('date').innerHTML = today.getDate() + " " + months[today.getMonth()] + ", " + days[today.getDay()];
             }
 
             window.addEventListener("load", myInit, true); function myInit() {
@@ -44,9 +70,8 @@
         </div>
 
         <div id = "info">
-
             <div id = "time">12:25</div>
-
+            <div id = "date">3 июля, понедельник</div>
         </div>
 
         <div id = "left">
