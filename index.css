@@ -31,19 +31,25 @@ body {
 }
 
 #info {
-    display: flex;
-    float: left;
     color: white;
-    font-size: 4rem;
     font-family: 'CoFo', sans-serif;
     text-shadow: 0px 0px 16px rgba(0, 0, 0, 0.3);
+}
+
+#time {
+    display: block;
+    font-size: 4rem;
+}
+
+#date {
+    display: block;
+    font-size: 2rem;
 }
 
 #left {
     position: absolute;
     margin-top: 14rem;
     text-shadow: 0px 0px 16px rgba(0, 0, 0, 0.3);
-
 }
 
 #logo {
