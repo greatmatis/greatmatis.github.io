@@ -17,14 +17,6 @@
                 return i;
             }
 
-            function getTemp() {
-                fetch('http://api.openweathermap.org/data/2.5/weather?q=Tomsk,ru&units=metric&APPID=1cfc8b91998f40e22a176808aaf39c15')
-                .then(response => response.json())
-                .then(data => {
-                    temp = data.main.temp;
-                })
-            }
-
             function updateTime() {
                 var today = new Date();
 
@@ -63,20 +55,13 @@
                 h = addZero(h);
                 m = addZero(m);
 
-                document.getElementById('time').innerHTML = h + ":" + m + " • " + Math.round(temp) + "°C";
+                document.getElementById('time').innerHTML = h + ":" + m;
                 document.getElementById('date').innerHTML = nd.getDate() + " " + months[nd.getMonth()] + ", " + days[nd.getDay()];
 
             }
 
-            function updateWeather() {
-                getTemp();
-                setTimeout(updateWeather, 10000);
-            }
-
             window.addEventListener("load", myInit, true); function myInit() {
-                temp = 0;
                 updateTime();
-                updateWeather();
             };
 
         </script>
