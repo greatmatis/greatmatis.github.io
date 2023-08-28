@@ -17,8 +17,8 @@ html {
 }
 
 iframe {
-    position: relative;
-    right: 88px;
+    float: right;
+    width: 1550px;
 }
 
 body {
@@ -90,5 +90,5 @@ body {
     border-radius: 16px 0 0 16px;
     background: url(dr.jpg) no-repeat;
     background-size: contain;
-    opacity: 0.9;
+    opacity: 0.96
 }
