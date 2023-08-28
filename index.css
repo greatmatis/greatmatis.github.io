@@ -12,6 +12,10 @@
     font-style: normal;
 }
 
+html {
+    background-color: black;
+}
+
 body {
     margin: 0;
     padding: 2rem;
@@ -23,7 +27,7 @@ body {
 #bg {
     z-index: -2;
     position: fixed;
-    right: 0;
+    right: 88px;
     bottom: 0;
     min-width: 100%; 
     min-height: 100%;
