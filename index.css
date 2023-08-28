@@ -66,6 +66,7 @@ body {
 #msg {
     position: absolute;
     display: block;
+    display: none;
     color: white;
     font-family: 'CoFo', sans-serif;
     font-size: 2rem;
