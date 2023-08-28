@@ -47,7 +47,8 @@ body {
 
 #left {
     position: absolute;
-    margin-top: 7rem;
+    /* margin-top: 7rem; */
+    margin-top: 26rem;
     text-shadow: 0px 0px 16px rgba(0, 0, 0, 0.3);
 }
 
