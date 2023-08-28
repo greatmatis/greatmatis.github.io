@@ -16,6 +16,11 @@ html {
     background-color: black;
 }
 
+iframe {
+    position: relative;
+    right: 88px;
+}
+
 body {
     margin: 0;
     padding: 2rem;
@@ -27,7 +32,7 @@ body {
 #bg {
     z-index: -2;
     position: fixed;
-    right: 88px;
+    right: 0;
     bottom: 0;
     min-width: 100%; 
     min-height: 100%;
