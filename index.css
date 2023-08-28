@@ -74,9 +74,10 @@ body {
 
 #dr {
     float: right;
+    margin-right: -40px;
     width: 28.98rem;
     height: 41rem;
-    border-radius: 32px;
+    border-radius: 16px 0 0 16px;
     background: url(dr.jpg) no-repeat;
     background-size: contain;
     opacity: 0.9;
