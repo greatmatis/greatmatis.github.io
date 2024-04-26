@@ -63,6 +63,7 @@ body {
     font-family: 'CoFo', sans-serif;
     color: white;
     font-size: 5.5rem;
+    display: none;
 }
 
 #logo-text-pixel {
