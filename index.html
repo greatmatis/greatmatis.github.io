@@ -21,7 +21,7 @@
                 var today = new Date();
 
                 var utc = today.getTime()
-                var nd = new Date(utc + (3600000*3));
+                var nd = new Date(utc);
 
                 var h = nd.getHours();
                 var m = nd.getMinutes();
@@ -67,29 +67,74 @@
         </script>
 
         <div id = "bg">
-            <!--
-                <iframe width="1280px" height="720px" src="https://www.youtube.com/embed/PsTMH-ImUuI?&autoplay=1&mute=1&controls=0&loop=1&playlist=PsTMH-ImUuI" frameborder="0" allow="autoplay" allowfullscreen></iframe>
-            -->
         </div>
-        
-        <!--
-            <video width="1280" height="720"  autoplay loop muted>
-                <source type="video/mp4" src="dr.mp4">
-            </video>
-        -->
         
         <div id = "info">
             <div id = "time">12:25</div>
             <div id = "date">3 июля, понедельник</div>
         </div>
 
-        <div id = "left">
-            <div id = "logo-text">red_mad_<span id = "logo-text-pixel">robot</span></div>
-            <div id = "msg">Название «Пески» произошло от&nbsp;слова «приплеск»: самый краешек берега, узкая полоса омываемая водой. Гор песка в&nbsp;одноимённом районе Томска не&nbsp;складировали&nbsp;:)</div>
-        </div>
-<!--
-        <div id = "dr"></div>
--->
+        <div class="card-container" id="content"></div>
+
+        <script>
+            async function fetchSheetData() {
+                const SHEET_ID = '1MmqUA7kw4zgv_uPb8gX3xrfwZchwlcGkbY_56SZlwzs';
+                const RANGE = 'Messages!A2:F';
+                const URL = `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/${RANGE}?key=AIzaSyBGoy2gklXDRgaN0Gy4B1tev75xLmpAB1c`;
+    
+                try {
+                    const response = await fetch(URL);
+                    const data = await response.json();
+                    return data.values;
+                } catch (error) {
+                    console.error('Error fetching data:', error);
+                    return null;
+                }
+            }
+    
+            async function updateMessages() {
+                const rows = await fetchSheetData();
+                if (!rows) return;
+    
+                const contentDiv = document.getElementById('content');
+                contentDiv.innerHTML = ''; // Clear existing content
+    
+                for (let i = rows.length - 1; i >= Math.max(0, rows.length - 5); i--) {
+                    const row = rows[i];
+                    const userId = row[0];
+                    const userName = row[5]; //пропускаем столбец, т. к. в нём сырые ники из Телеграма
+                    const avatarUrl = row[3];
+                    const message = row[4];
+    
+                    let messageDiv = document.createElement('div');
+                    messageDiv.className = 'card show';
+    
+                    let userDiv = document.createElement('div');
+                    userDiv.className = 'user';
+                    let userImg = document.createElement('img');
+                    userImg.src = avatarUrl || 'default-avatar.png'; // default avatar if none
+                    let userNameDiv = document.createElement('div');
+                    userNameDiv.textContent = userName;
+    
+                    userDiv.appendChild(userImg);
+                    userDiv.appendChild(userNameDiv);
+    
+                    let messageContentDiv = document.createElement('div');
+                    messageContentDiv.className = 'message-content';
+                    messageContentDiv.textContent = message;
+    
+                    messageDiv.appendChild(userDiv);
+                    messageDiv.appendChild(messageContentDiv);
+    
+                    contentDiv.appendChild(messageDiv);
+                }
+            }
+    
+            window.onload = function() {
+                updateMessages();
+                setInterval(updateMessages, 5000); // Refresh every 5 seconds
+            };
+        </script>
 
     </body>
 </html>
